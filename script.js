@@ -57,43 +57,4 @@ function startTimer() {
     }, 1000);
 }
 
-describe('Meditation App', () => {
-  const baseUrl = 'http://localhost:8080'; // replace with your actual base URL
 
-  const expectPlayingAudio = (playing = true) => {
-    cy.get('audio').then($audio => {
-      if (playing) {
-        expect($audio[0].paused).to.be.false;
-      } else {
-        expect($audio[0].paused).to.be.true;
-      }
-    });
-  };
-
-  beforeEach(() => {
-    cy.visit(baseUrl + '/main.html'); // Ensure this is set to baseUrl + "/main.html"
-  });
-
-  it('should play and pause the audio', () => {
-    // Initially, the audio should be paused
-    expectPlayingAudio(false);
-
-    // Click the play button, the audio should start playing
-    cy.get('.play').click();
-    cy.wait(500); // wait for a while to let the audio start playing
-    expectPlayingAudio();
-
-    // Click the play button again, the audio should pause
-    cy.get('.play').click();
-    cy.wait(500); // wait for a while to let the audio pause
-    expectPlayingAudio(false);
-  });
-
-  // Handle the uncaught:exception event to prevent the test from failing
-  Cypress.on('uncaught:exception', (err, runnable) => {
-    if (err.message.includes('The play() request was interrupted by a call to pause()')) {
-      return false;
-    }
-    return true;
-  });
-});
