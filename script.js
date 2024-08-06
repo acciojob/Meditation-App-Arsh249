@@ -20,7 +20,7 @@ function switchSound(type) {
 
 function setTime(minutes) {
     duration = minutes * 60;
-    timeDisplay.textContent = `${minutes}:00`;
+    timeDisplay.textContent = `${minutes}:0`;
 }
 
 function togglePlay() {
@@ -57,6 +57,6 @@ function startTimer() {
         remainingTime--;
         let minutes = Math.floor(remainingTime / 60);
         let seconds = remainingTime % 60;
-        timeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+        timeDisplay.textContent = `${minutes}:${seconds < 10 ? seconds : seconds}`;
     }, 1000);
 }
