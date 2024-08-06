@@ -50,7 +50,7 @@ function startTimer() {
             audio.pause();
             video.pause();
             playButton.textContent = 'Play';
-            timeDisplay.textContent = '0:00';
+            timeDisplay.textContent = '0:0';
             return;
         }
 
