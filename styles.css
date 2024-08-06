@@ -1,4 +1,4 @@
-/*  your css code here. If applicable */
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: #f0f0f0;
+    background-color: #f0f0f0;
 }
 
 #app {
@@ -21,23 +21,21 @@ body {
     display: none;
 }
 
-.controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sound-picker button, 
-#time-select button, 
-.play {
-    margin: 10px;
+.sound-picker button, .time-picker button, .play {
+    margin: 5px;
     padding: 10px 20px;
-    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.time-display {
-    font-size: 24px;
-    margin: 20px;
+.sound-picker button:hover, .time-picker button:hover, .play:hover {
+    background-color: #0056b3;
 }
 
+.time-display {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
